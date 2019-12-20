@@ -1,0 +1,35 @@
+{
+  "name": "node-weather-module",
+  "version": "1.0.0",
+  "description": "A small module to compare the temperature between two cities",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vickysolo/node-weather-module.git"
+  },
+  "keywords": [
+    "node",
+    "weather",
+    "module",
+    "api"
+  ],
+  "author": "Victoria Solís",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Vickysolo/node-weather-module/issues"
+  },
+  "homepage": "https://github.com/Vickysolo/node-weather-module#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "nodemon": "^2.0.2"
+  }
+}
