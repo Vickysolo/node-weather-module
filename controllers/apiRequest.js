@@ -1,5 +1,6 @@
 const axios = require('axios');
 const dotenv = require('dotenv').config();
+const handleErrors = require('./handleErrors');
 
 
 let apiRequest = {
@@ -10,16 +11,11 @@ let apiRequest = {
       let temp = response.data.main.temp
       return temp
     } catch (error) {
-      if (error.response.data.cod == '404'){
-        return {
-          code:"404",
-          msg: `the requested city ${city} could not be found, please try again`
-        }    
+      console.log(error.response.status)
+      if (error.response.status == 404){
+        return handleErrors.invalid
       } else {
-        return {
-          code:"500",
-          msg: `server error`
-        }
+        return handleErrors.server(error.response)
       } 
     }
   }
