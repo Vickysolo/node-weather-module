@@ -7,7 +7,8 @@ let apiRequest = {
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.API_KEY}`;
     try {
       const response = await axios.get(url);
-      return response.data
+      let temp = response.data.main.temp
+      return temp
     } catch (error) {
       if (error.response.data.cod == '404'){
         return {
