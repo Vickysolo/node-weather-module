@@ -9,8 +9,27 @@ let compare = {
             let cityTwo = await apiRequest.getTemperature(city2)
             console.log(cityTwo)
             if(typeof(cityOne) == "number" && typeof(cityTwo)== "number"){
-            let difference = Math.abs(cityOne - cityTwo);
-            return difference
+                let difference = Math.abs(cityOne - cityTwo);
+                let weatherInfo
+                if (cityOne > cityTwo) {
+                    weatherInfo = {
+                        warmerCityName: city1,
+                        warmerCityTemperature: cityOne,
+                        colderCityName: city2,
+                        colderCityTemperature: cityTwo,
+                        difference: difference
+                    }
+                } else {
+                    weatherInfo = {
+                        warmerCityName: city2,
+                        warmerCityTemperature: cityTwo,
+                        colderCityName: city1,
+                        colderCityTemperature: cityOne,
+                        difference: difference
+                    }
+                }
+                var sendJsonResult = handleErrors.valid(weatherInfo)
+            return sendJsonResult
             }
             else {console.log('pues hay un error')
                 return handleErrors.invalid

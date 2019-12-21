@@ -18,8 +18,6 @@ app.get('/compareMadrid', async (req,res) => {
 })
 app.get('/compareCities', async(req,res) => {
     if(!req.query.city1 || !req.query.city2){
-        console.log('ehh que la ciudad no existe')
-
         return res.json(handleErrors.invalid)
     } else {
         let tempDiff = await compare.compareTemperatures(req.query.city1,req.query.city2)
