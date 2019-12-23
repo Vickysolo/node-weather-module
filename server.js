@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const compare = require('./controllers/compare');
-const responseHandler = require('./controllers/responseHandler');
+const responseHandler = require('./handlers/responseHandler');
 
 const port = process.env.PORT || 3000;
 const app = express();
