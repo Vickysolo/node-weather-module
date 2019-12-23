@@ -87,6 +87,14 @@ If the cities are valid, the response would be similar to this:
 If some city is invalid the response would be:
 
 ```
+{
+  "HttpStatusCode": 422,
+  "error": {
+    "Type": "Invalid City",
+    "Message": "City name is invalid or does not exist."
+  }
+}
+
 ```
 
 ### About the project
