@@ -1,5 +1,5 @@
 const apiRequest = require('./apiRequest');
-const responseHandler = require('./responseHandler');
+const responseHandler = require('../handlers/responseHandler');
 
 let compare = {
     compareTemperatures: async (firstCity,secondCity)=>{
