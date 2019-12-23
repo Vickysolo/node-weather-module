@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.get('/', (req,res) => {
-    res.send('Compara el tiempo entre dos ciudades');
+    res.send('Compara el tiempo entre dos ciudades -- Repo & Info: https://github.com/Vickysolo/node-weather-module/');
 })
 
 app.get('/compareMadrid', async (req,res) => {
