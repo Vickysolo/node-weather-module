@@ -22,6 +22,10 @@ app.get('/compareCities', async(req,res) => {
     return res.json(tempDiff);
 })
 
+app.get('*', (req,res) => {
+    return res.json(responseHandler.notFound);
+})
+
 app.listen(port,() => {
     console.log(`Server running on port ${port}`);
 })

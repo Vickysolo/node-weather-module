@@ -20,6 +20,13 @@ let responseHandler = {
                 Message: "Server Error:" [error],
             }
         }
+    },
+    notFound: {
+        HttpStatusCode: 404,
+        error: {
+            Type: "Not found",
+            Message: "Item not found ¡Sorry!",
+        }
     }
 }
 
