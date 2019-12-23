@@ -8,25 +8,21 @@ const app = express();
 
 app.get('/compareMadrid', async (req,res) => {
     if(!req.query.city){
-        console.log('ehh que la ciudad no existe')
-        return res.json(responseHandler.invalid)
-    } else {
-        let tempDiff = await compare.compareTemperatures("Madrid",req.query.city)
-        return res.json(tempDiff)
+        return res.json(responseHandler.invalid);
     }
-
+    let tempDiff = await compare.compareTemperatures("Madrid",req.query.city);
+    return res.json(tempDiff);
 })
+
 app.get('/compareCities', async(req,res) => {
     if(!req.query.city1 || !req.query.city2){
-        return res.json(responseHandler.invalid)
-    } else {
-        let tempDiff = await compare.compareTemperatures(req.query.city1,req.query.city2)
-        return res.json(tempDiff)
+        return res.json(responseHandler.invalid);
     }
-
+    let tempDiff = await compare.compareTemperatures(req.query.city1,req.query.city2);
+    return res.json(tempDiff);
 })
 
-app.listen(port,function(){
+app.listen(port,() => {
     console.log(`Server running on port ${port}`);
 })
 
