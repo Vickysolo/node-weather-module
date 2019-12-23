@@ -6,6 +6,10 @@ const responseHandler = require('./controllers/responseHandler');
 const port = process.env.PORT || 3000;
 const app = express();
 
+app.get('/', (req,res) => {
+    res.send('Compara el tiempo entre dos ciudades');
+})
+
 app.get('/compareMadrid', async (req,res) => {
     if(!req.query.city){
         return res.json(responseHandler.invalid);

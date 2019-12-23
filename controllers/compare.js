@@ -9,6 +9,7 @@ let compare = {
             return responseHandler.invalid;
         }
         let difference = Math.abs(firstCityTemp - secondCityTemp);
+        difference = difference.toFixed(2); 
         let weatherInfo;
         if (firstCityTemp > secondCityTemp) {
             weatherInfo = {
