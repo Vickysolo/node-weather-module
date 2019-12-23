@@ -5,7 +5,7 @@ let compare = {
     compareTemperatures: async (firstCity,secondCity)=>{
         let firstCityTemp = await apiRequest.getTemperature(firstCity);
         let secondCityTemp = await apiRequest.getTemperature(secondCity);
-        if(typeof(firstCityTemp) != "number" && typeof(secondCityTemp) != "number"){
+        if(typeof(firstCityTemp) != "number" || typeof(secondCityTemp) != "number"){
             return responseHandler.invalid;
         }
         let difference = Math.abs(firstCityTemp - secondCityTemp);
